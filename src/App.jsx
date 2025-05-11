@@ -1,6 +1,7 @@
 
 import './App.css'
 import ProtectedRoute from './components/ProtectedRoute'
+import CreateBlog from './pages/CreateBlog'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Register from './pages/Register'
@@ -12,11 +13,17 @@ function App() {
   <main>
     <Router>
       <Routes>
-        <Route path='/blogs' element={
+        <Route path='/' element={
           <ProtectedRoute>
             <Home/>
           </ProtectedRoute>
         } />
+
+         <Route path="create-blog" element={
+          <ProtectedRoute>
+            <CreateBlog />
+          </ProtectedRoute>
+         } />
         <Route path='/signup' element={<Register />} />
         <Route path="/login" element={<Login/>} />
       </Routes>

@@ -3,11 +3,12 @@ import * as Yup from 'yup'
 import React, { useContext } from 'react'
 import axios from 'axios'
 import { AuthContext } from '../context/AuthContext'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
   //import the login function from authcontext
   const {login} = useContext(AuthContext)
-
+ const navigate = useNavigate()
   const loginUser = async (values) => {
     try {
       const response = await axios.post("https://blog-hqx2.onrender.com/user/login", values)
@@ -16,6 +17,7 @@ const Login = () => {
       const token = response.data.token
       const user = response.data.user
       login(token, user)
+      navigate("/")
       
     } catch (error) {
       console.log(error)
