@@ -27,3 +27,6 @@ const SingleBlogPage = () => {
 }
 
 export default SingleBlogPage
+
+//task:
+//design the single blog page. give specfic height and width to the image make the title bold and font size to 2xl . design description accordingly.

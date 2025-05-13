@@ -7,6 +7,7 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom'
 import SingleBlogPage from './pages/SingleBlogPage'
+import MyBlog from './pages/MyBlog'
 
 
 function App() {
@@ -23,6 +24,12 @@ function App() {
         <Route path='/singleblogs/:id' element={
           <ProtectedRoute>
            <SingleBlogPage />
+          </ProtectedRoute> 
+        } />
+
+<Route path='/myblog' element={
+          <ProtectedRoute>
+           <MyBlog />
           </ProtectedRoute> 
         } />
 

@@ -24,6 +24,10 @@ const Home = () => {
         </h1>
 
         {/* Link to create a new blog */}
+        <Link to={"/myblog"}>  <div className="p-2 bg-blue-500 text-white rounded-lg">
+        My Blog
+       </div>
+       </Link>
      <Link to={"/create-blog"}>  <div className="p-2 bg-blue-500 text-white rounded-lg">
         Create Blog
        </div>
