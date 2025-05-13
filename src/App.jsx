@@ -16,7 +16,7 @@ function App() {
         <Route path='/' element={
           <ProtectedRoute>
             <Home/>
-          </ProtectedRoute>
+          </ProtectedRoute> 
         } />
 
          <Route path="create-blog" element={

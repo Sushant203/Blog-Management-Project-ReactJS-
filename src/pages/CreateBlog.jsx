@@ -28,16 +28,11 @@ const CreateBlog = () => {
            formData.append("author",user?._id);
 
           try {
-               const response = await axios.post("https://blog-hqx2.onrender.com/blog/create",formData)
-                
+               await axios.post("https://blog-hqx2.onrender.com/blog/create",formData)
                 navigate("/");
-               
-
-                  
           } catch (error) {
             console.log(error)
           }
-
     }
     
   return (
@@ -47,15 +42,10 @@ const CreateBlog = () => {
              title:"",
              content:"",
           }}
-
           onSubmit={(values)=>{
             handleSubmit(values);
           }}
-
-        
-
         >
-
             <Form>
                 <label htmlFor="title" className="text-xl mr-4">Title</label>
                 <Field type="text" name="title" placeholder="enter blog title" className="border" />
