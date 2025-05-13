@@ -34,9 +34,9 @@ const Home = () => {
       {blogs.length > 0 && (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {blogs.map((blog) => (
-            <div
+            <Link to={`/singleblogs/${blog._id}`}
               key={blog._id}
-              onClick={() => navigate(`/singleAllBlogPage/${blog._id}`)}
+              // onClick={() => navigate(`/singleAllBlogPage/${blog._id}`)}
               className="bg-white cursor-pointer rounded-xl shadow-lg overflow-hidden transition-all duration-300 ease-in-out hover:shadow-2xl transform hover:-translate-y-1 flex flex-col"
             >
               {blog.image ? (
@@ -90,7 +90,7 @@ const Home = () => {
                   {blog.content}
                 </p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       )}
