@@ -8,6 +8,7 @@ import Register from './pages/Register'
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom'
 import SingleBlogPage from './pages/SingleBlogPage'
 import MyBlog from './pages/MyBlog'
+import EditBlog from './pages/EditBlog'
 
 
 function App() {
@@ -30,6 +31,12 @@ function App() {
 <Route path='/myblog' element={
           <ProtectedRoute>
            <MyBlog />
+          </ProtectedRoute> 
+        } />
+
+<Route path='/editBlogs/:id' element={
+          <ProtectedRoute>
+           <EditBlog />
           </ProtectedRoute> 
         } />
 

@@ -2,6 +2,8 @@ import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react'
 import { AuthContext } from '../context/AuthContext';
 import { MdDelete } from 'react-icons/md';
+import { RxUpdate } from 'react-icons/rx';
+import { Link } from 'react-router-dom';
 
 
 const MyBlog = () => {
@@ -42,9 +44,15 @@ const MyBlog = () => {
                     <h1 className='font-bold text-xl'>{blog.title}</h1>
                     <img src={blog.image} alt="" className="h-72 w-full" />
                     <p className='text-gray-600 font-semibold'>{blog.content}</p>
-                    <button className='text-red-500 cursor-pointer flex  text-2xl'>
+                   <div className='flex gap-2 items-center'>
+                   <button className='text-red-500 cursor-pointer flex  text-2xl'>
                         <MdDelete onClick={()=>deleteBlogs(blog?._id)} />
                     </button>
+                  <Link to={`/editBlogs/${blog?._id}`} state={{blog}}>  <button className='text-green-500 cursor-pointer flex  text-2xl'>
+                        <RxUpdate />
+                    </button>
+                    </Link>
+                   </div>
                 </div>
                )
            })
